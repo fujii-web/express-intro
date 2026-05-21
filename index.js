@@ -1,13 +1,6 @@
 const express = require('express');
 const app = express();
 
-const loggerMiddleware = function(req, res, next) {
-  console.log(`[${new Date()}] ${req.method} ${req.url}`);
-  next();
-};
-
-app.use(loggerMiddleware);
-
 // GETリクエスト
 app.get('/', (req, res) => {
   res.send({
